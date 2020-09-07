@@ -3,7 +3,7 @@
 A basic contact list made using nodejs in which we can add and delete a contact. Also I have used express js.
 
 # To run this app, the following scripts are available:
-## 'npm install'
+## "npm install"
 Installs the required dependencies to run the app
 
 ## 'node index.js'
