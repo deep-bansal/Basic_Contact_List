@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/094ee70a67.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet"> 
+    <link rel="stylesheet" href="/css/home.css">    
+    <title>
+        <%= title %>
+    </title>
+</head>
+<body>
+    <h1 id = "page-heading">
+        <i class = "fas fa-address-book"></i>
+        My Contacts List</h1>
+
+    <div>
+        
+        <% for(let i of contact_list){%>
+
+              <div id = "material">
+                <div class = "contacts">
+                    <div class = "content"> <%= i.name %> </div> 
+                    <div class = "content"> <%= i.number%> </div>
+                   </div>  
+                   
+                   <!-- <div class="delete-btn">
+                    <a href ="/delete-contact/<%= i.number%>">
+                      <i class="fa fa-trash delete-icon" aria-hidden="true"></i>
+                    </a>
+                  </div> -->
+               
+                   <div class="delete-btn">
+                     <a href ="/delete-contact/?phone=<%= i.number%>">
+                       <i class="fa fa-trash delete-icon" aria-hidden="true"></i>
+                     </a>
+                   </div>
+              </div>
+
+        <%}%>
+        
+
+    </div>
+
+   <div>
+   
+    <form action="/create-contact" method = "POST">
+        <input id = "name" class = "text" type="text" name = "name" placeholder="Enter Name" required>
+        <input class = "text" type="number" name= "number" placeholder="Enter Number" required minlength="10" maxlength="10">
+        <br>
+        <button type = "submit">Add Contact</button>
+       
+    </form>
+    
+   </div>
+
+   <script type= "text/javascript" src="/js/script.js"></script>
+    
+</body>
+</html>
